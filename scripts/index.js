@@ -10,8 +10,10 @@ const saveButton = document.querySelector(".popup__send-button");
 
 // Abre el popup
 editButton.addEventListener("click", function () {
+  // Pre-fill form fields with current values
+  nameField.value = profileName.textContent;
+  aboutField.value = profileHeading.textContent;
   popup.classList.add("show");
-  form.reset(); // Limpia el formulario para que se vean los placeholders
 });
 
 // Cierra el popup
