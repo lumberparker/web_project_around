@@ -19,7 +19,7 @@
   text-wrap: nowrap;
   margin-bottom: 0px;
   font-family: "inter", "arial", sans-serif;
-  max-width: 360px;
+  max-width: 450px;
   font-weight: 500;
   font-size: 42px;
   overflow-x: hidden;
@@ -38,7 +38,7 @@
   border: 2px solid;
   border-color: white;
   color: white;
-  background-image: url(./images/Vector.png);
+  background-image: url(../images/Vector.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -55,7 +55,7 @@
   margin-left: 18px;
   border-color: white;
   color: white;
-  background-image: url(./images/edit.png);
+  background-image: url(../images/edit.png);
   background-repeat: no-repeat;
   background-position: center;
   margin-top: 0px;
