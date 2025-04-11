@@ -1,12 +1,12 @@
-const editButton = document.querySelector(".profile__info-edit_button");
+const editButton = document.querySelector(".profile__info-edit");
 const popup = document.querySelector(".popup");
-const closeButton = document.querySelector(".popup__close-button");
+const closeButton = document.querySelector(".popup__close");
 const form = document.querySelector(".popup__form");
 const nameField = document.querySelector(".popup__form-input[name='name']");
 const aboutField = document.querySelector(".popup__form-input[name='about']");
 const profileName = document.querySelector(".profile__info-name");
 const profileHeading = document.querySelector(".profile__info-heading");
-const saveButton = document.querySelector(".popup__send-button");
+const saveButton = document.querySelector(".popup__send");
 
 // Abre el popup
 editButton.addEventListener("click", function () {
