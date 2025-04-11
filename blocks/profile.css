@@ -18,13 +18,19 @@
   grid-area: 2 / 2 / 3 / 4;
   text-wrap: nowrap;
   margin-bottom: 0px;
+  font-family: "inter", "arial", sans-serif;
+  max-width: 360px;
+  font-weight: 500;
+  font-size: 42px;
+  overflow-x: hidden;
+  line-height: 50px;
 }
 .profile__info_heading {
   grid-area: 2 / 3 / 4 / 3;
   margin-top: 16px;
 }
 .profile__add-button {
-  grid-area: 2 / 5 / 4 / 6;
+  grid-area: 2 / 5 / 3 / 6;
   width: 150px;
   height: 50px;
   background-color: transparent;
@@ -35,6 +41,9 @@
   background-image: url(/images/Vector.png);
   background-repeat: no-repeat;
   background-position: center;
+}
+.profile__add-button:hover {
+  opacity: 0.6;
 }
 .profile__edit-button {
   grid-area: 2 / 3 / 3 / 4;
@@ -51,11 +60,16 @@
   background-position: center;
   margin-top: 0px;
   margin-left: 30px;
+  cursor: pointer;
+}
+.profile__edit-button:hover {
+  opacity: 0.6;
 }
 .profile__info_container {
   display: flex;
   align-items: baseline;
 }
+
 @media screen and (max-width: 480px) {
   .profile {
     min-width: 320px;

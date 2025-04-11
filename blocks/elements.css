@@ -46,6 +46,16 @@
   width: 21px;
   height: 19px;
   margin-right: 15px;
+  fill: white;
+  stroke: black;
+  stroke-width: 2px;
+}
+.elements__card-like:hover {
+  cursor: pointer;
+  stroke-opacity: 50%;
+}
+.elements__card-like:active {
+  fill: black;
 }
 @media screen and (max-width: 880px) {
   .elements {
