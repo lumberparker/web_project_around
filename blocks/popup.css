@@ -1,7 +1,7 @@
 .popup {
   display: none;
   background-color: transparent;
-  position: absolute;
+  position: fixed;
   top: 165px;
   left: 50%;
   transform: translateX(-50%);
@@ -76,4 +76,39 @@
 }
 .popup__close-button:hover {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 480px) {
+  .popup {
+    width: 282px;
+    height: 322px;
+    top: 123px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .popup__form-container {
+    width: 282px;
+    height: 322px;
+    padding: 25px 0px 25px 22px;
+  }
+
+  .popup__close-button {
+    position: fixed;
+    top: -40px;
+    left: 280px;
+    width: 26px;
+    height: 26px;
+    z-index: 4;
+  }
+  .popup__send-button {
+    width: 238px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .popup__form.form__fields {
+    padding-inline-start: 0px;
+  }
+  .popup__form-input {
+    width: 238px;
+  }
 }
