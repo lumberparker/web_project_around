@@ -27,7 +27,7 @@
   color: black;
   margin-left: 36px;
 }
-.popup__form.form__fields {
+.popup__form-fields {
   list-style-type: none;
 }
 
@@ -105,7 +105,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .popup__form.form__fields {
+  .popup__form-fields {
     padding-inline-start: 0px;
   }
   .popup__form-input {
