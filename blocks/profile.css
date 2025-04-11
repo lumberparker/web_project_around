@@ -46,7 +46,7 @@
 .profile__add-button:hover {
   opacity: 0.6;
 }
-.profile__edit-button {
+.profile__info-edit_button {
   grid-area: 2 / 3 / 3 / 4;
   width: 24px;
   height: 24px;
@@ -63,7 +63,7 @@
   margin-left: 30px;
   cursor: pointer;
 }
-.profile__edit-button:hover {
+.profile__info-edit_button:hover {
   opacity: 0.6;
 }
 
@@ -113,7 +113,7 @@
     justify-content: center;
     gap: 0px;
   }
-  .profile__edit-button {
+  .profile__info-edit_button {
     margin-left: 10px;
     height: 18px;
     width: 18px;
