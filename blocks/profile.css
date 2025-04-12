@@ -22,7 +22,8 @@
   max-width: 450px;
   font-weight: 500;
   font-size: 42px;
-
+text-overflow: ellipsis;
+overflow-x: hidden;
   line-height: 50px;
 }
 .profile__info-heading {
