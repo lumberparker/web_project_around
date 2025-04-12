@@ -22,8 +22,7 @@
   max-width: 450px;
   font-weight: 500;
   font-size: 42px;
-text-overflow: ellipsis;
-overflow-x: hidden;
+
   line-height: 50px;
 }
 .profile__info-heading {
@@ -75,18 +74,18 @@ overflow-x: hidden;
 
 @media screen and (max-width: 480px) {
   .profile {
-    min-width: 320px;
-    width: 320px;
+    width: 100%;
+    max-width: 320px; /* Ensure it doesn't exceed the screen width */
     display: flex;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto; /* Center the section */
+    margin-top: 46px;
+    margin-bottom: 32px;
   }
   .profile__pic {
     width: 120px;
     height: 120px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto; /* Center the picture */
   }
   .profile__info-name {
     font-family: Inter;
@@ -97,16 +96,12 @@ overflow-x: hidden;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 14px;
-    width: 200px;
+    width: 100%; /* Ensure it doesn't exceed the container width */
+    max-width: 200px; /* Limit the width */
   }
   .profile__info-heading {
     margin-top: 0px;
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    text-align: center;
+    text-align: center; /* Center the heading */
   }
   .profile__info-container {
     display: flex;
@@ -125,3 +120,4 @@ overflow-x: hidden;
     margin: auto;
   }
 }
+//nota de prueba
