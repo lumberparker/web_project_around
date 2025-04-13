@@ -41,11 +41,10 @@
   color: black;
   text-wrap: nowrap;
   margin-left: 21px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow-x: hidden;
-    line-height: 24px;
-  
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+  line-height: 24px;
 }
 .elements__card-like {
   width: 21px;
