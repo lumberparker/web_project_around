@@ -2,6 +2,8 @@
   width: 880px;
   height: 16px;
   margin: auto;
+  padding-bottom: 80px;
+  top: 40px;
 }
 .footer__copyright {
   font-family: Inter;
@@ -10,10 +12,17 @@
   line-height: 100%;
   letter-spacing: 0%;
   text-align: left;
-  margin-top: 67px;
+
   color: #545454;
 }
-
+@media screen and (max-width: 768px) {
+  .footer {
+    max-width: 768px;
+    width: 100vw;
+    height: 16px;
+    margin: auto;
+  }
+}
 @media screen and (max-width: 480px) {
   .footer {
     width: 320px;
