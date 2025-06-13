@@ -1,10 +1,22 @@
-.footer {
-  width: 880px;
-  height: 16px;
-  margin: auto;
-  padding-bottom: 80px;
-  top: 40px;
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
 }
+
+.main {
+  flex: 1;
+}
+
+.footer {
+  width: 100%;
+  max-width: 880px; /* Usa el mismo max-width que tu contenido principal */
+  margin: auto auto 0 auto;
+  height: 16px;
+  padding-bottom: 80px;  Elimina si no es necesario 
+}
+
 .footer__copyright {
   font-family: Inter;
   font-weight: 400;
@@ -12,9 +24,16 @@
   line-height: 100%;
   letter-spacing: 0%;
   text-align: left;
-
   color: #545454;
 }
+
+@media screen and (max-width: 880px) {
+  .footer {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .footer {
     max-width: 768px;
@@ -23,6 +42,7 @@
     margin: auto;
   }
 }
+
 @media screen and (max-width: 480px) {
   .footer {
     width: 320px;
