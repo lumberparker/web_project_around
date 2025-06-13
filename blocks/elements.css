@@ -1,8 +1,9 @@
 .elements {
-  height: 100%;
+  max-height: 100%;
+  height: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
   width: 880px;
   column-gap: 17px;
   row-gap: 20px;
@@ -13,7 +14,6 @@
   background-color: black;
   line-height: 100%;
   letter-spacing: 0%;
-  margin-bottom: 100px;
 }
 .elements__card {
   display: flex;
@@ -37,45 +37,48 @@
   fill: #e74c3c;
 }
 .elements__card-image {
-  width: 100%;
-  display: block;
-  border-radius: 10px 10px 0 0;
-  object-fit: cover;
+  width: 282px;
+  height: 282px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .elements__card-info {
+  height: 79;
+  width: 282px;
   display: flex;
+  background-color: white;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
-  background: #fff;
-  border-radius: 0 0 10px 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .elements__card-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: #222;
-  margin: 0;
-  flex: 1;
-  overflow: hidden;
+  color: black;
+  text-wrap: nowrap;
+  margin-left: 21px;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
+  line-height: 24px;
 }
 .elements__card-like {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  fill: #bcbcbc;
-  transition: fill 0.2s;
+  width: 21px;
+  height: 19px;
+  margin-right: 15px;
+  fill: white;
+  stroke: black;
+  stroke-width: 2px;
 }
 .elements__card-like:hover {
-  fill: #ff0000;
+  cursor: pointer;
+  stroke-opacity: 50%;
 }
 .elements__card-like:active {
   fill: black;
 }
 @media screen and (max-width: 768px) {
   .elements {
-    width: 100vw;
+    width: 100%;
     font-size: 2vw;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;

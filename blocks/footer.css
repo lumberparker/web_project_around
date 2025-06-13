@@ -14,7 +14,8 @@
   max-width: 880px; 
   margin: auto auto 0 auto;
   height: 16px;
-  padding-bottom: 80px;  
+  padding-bottom: 80px; 
+  padding-top: 50px; 
 }
 
 .footer__copyright {
@@ -31,6 +32,7 @@
   .footer {
     max-width: 100%;
     width: 100%;
+    margin-left: 20px;
   }
 }
 
@@ -40,6 +42,7 @@
     width: 100vw;
     height: 16px;
     margin: auto;
+    margin-left: 20px;
   }
 }
 
@@ -48,6 +51,8 @@
     width: 320px;
     height: 16px;
     margin: auto;
+    margin-left: 20px;
+    padding-top: 20px;
   }
   .footer__copyright {
     font-family: Inter;
