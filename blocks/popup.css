@@ -1,20 +1,22 @@
 .popup,
 .popup__add {
   display: none;
-  background-color: transparent;
   position: fixed;
-  top: 165px;
-  left: 50%;
-  transform: translateX(-50%);
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
 }
 .popup.show,
 .popup__add.show {
-  display: block;
+  display: flex;
 }
 
 .popup__image {
   display: none;
-  position: absolute;
+  position: fixed;
+  inset: 0;
   width: 100vw;
   height: 100vh;
   background: rgba(0,0,0,0.5);
@@ -98,8 +100,8 @@
   background-color: transparent;
   border: none;
   position: relative;
-  left: 500px;
-  top: 0px;
+  left: 550px;
+  top: -225px;
   cursor: pointer;
 }
 .popup__close:hover {
@@ -138,7 +140,7 @@
 
   .popup__close {
     position: fixed;
-    top: -40px;
+    top: -50px;
     left: 280px;
     width: 26px;
     height: 26px;
@@ -166,5 +168,8 @@
     right: -30px;
     width: 30px;
     height: 30px;
+  }
+  .popup__close-add{
+  
   }
 }
