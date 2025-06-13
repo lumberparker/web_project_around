@@ -158,53 +158,13 @@
 }
 
 @media screen and (max-width: 600px) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   .popup__image-img {
-    top: 100px;
     max-height: 300px;
     max-width: 98vw;
   }
-.popup__close-add{ 
-  top:90px;
-
-}
-.popup__close{ 
-  top:90px;
-
-}
-=======
-=======
->>>>>>> parent of 1a95834 (June 12)
-=======
->>>>>>> parent of 1a95834 (June 12)
-=======
->>>>>>> parent of 1a95834 (June 12)
-=======
->>>>>>> parent of 1a95834 (June 12)
   .popup__close-image {
     right: -30px;
     width: 30px;
     height: 30px;
   }
-  .popup__image-img {
-    max-height: 300px;
-    max-width: 98vw;
-  }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 1a95834 (June 12)
-=======
->>>>>>> parent of 1a95834 (June 12)
-=======
->>>>>>> parent of 1a95834 (June 12)
-=======
->>>>>>> parent of 1a95834 (June 12)
-=======
->>>>>>> parent of 1a95834 (June 12)
 }
