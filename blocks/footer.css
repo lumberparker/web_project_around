@@ -11,10 +11,10 @@
 
 .footer {
   width: 100%;
-  max-width: 880px; /* Usa el mismo max-width que tu contenido principal */
+  max-width: 880px; 
   margin: auto auto 0 auto;
   height: 16px;
-  padding-bottom: 80px;  Elimina si no es necesario 
+  padding-bottom: 80px;  
 }
 
 .footer__copyright {

@@ -14,8 +14,8 @@
 
 .popup__image {
   display: none;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  inset: 0;
   width: 100vw;
   height: 100vh;
   background: rgba(0,0,0,0.5);
@@ -108,10 +108,9 @@
 }
 
 .popup__close-image {
-  position: relative;
-  top: -540px; /* Adjusts the position to be just above the image */
-  left: 0;
-  right: 40px; /* places the button just outside the image */
+  position: absolute;
+  top: 0;
+  right: -40px;
   width: 40px;
   height: 40px;
   background-size: cover;
@@ -159,13 +158,13 @@
 }
 
 @media screen and (max-width: 600px) {
-  .popup__image-img {
-    max-height: 300px;
-    max-width: 98vw;
-  }
   .popup__close-image {
     right: -30px;
     width: 30px;
     height: 30px;
+  }
+  .popup__image-img {
+    max-height: 300px;
+    max-width: 98vw;
   }
 }

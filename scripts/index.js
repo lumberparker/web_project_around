@@ -10,7 +10,7 @@ const initialCards = [
 function createCard(card) {
   const cardElement = document.createElement('div');
   cardElement.classList.add('elements__card');
-  cardElement.style.position = 'relative'; // Asegura el contexto para posicionar el botón
+  cardElement.style.position = 'relative';
 
   cardElement.innerHTML = `
     <button class="elements__card-delete" aria-label="Eliminar tarjeta" type="button">
@@ -37,7 +37,6 @@ function createCard(card) {
     </div>
   `;
 
-  // Like button functionality
   const likeButton = cardElement.querySelector('.elements__card-like');
   likeButton.addEventListener('click', () => {
     if (likeButton.style.fill === "black") {
@@ -49,7 +48,6 @@ function createCard(card) {
     }
   });
 
-  // Delete button functionality
   const deleteButton = cardElement.querySelector('.elements__card-delete');
   deleteButton.addEventListener('click', () => {
     cardElement.remove();
@@ -58,7 +56,6 @@ function createCard(card) {
   return cardElement;
 }
 
-// Renderizar tarjetas al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
   const elementsSection = document.querySelector('.elements');
   initialCards.forEach(card => {
@@ -66,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Editar perfil
 const editButton = document.querySelector(".profile__info-edit");
 const popup = document.querySelector(".popup");
 const closeButton = document.querySelector(".popup__close");
@@ -77,19 +73,16 @@ const profileName = document.querySelector(".profile__info-name");
 const profileHeading = document.querySelector(".profile__info-heading");
 const saveButton = document.querySelector(".popup__send");
 
-// Abrir popup editar perfil
 editButton.addEventListener("click", function () {
   nameField.value = profileName.textContent;
   aboutField.value = profileHeading.textContent;
   popup.classList.add("show");
 });
 
-// Cerrar popup editar perfil
 closeButton.addEventListener("click", function () {
   popup.classList.remove("show");
 });
 
-// Guardar perfil
 saveButton.addEventListener("click", function (event) {
   event.preventDefault();
   const newName = nameField.value.trim();
@@ -104,7 +97,6 @@ saveButton.addEventListener("click", function (event) {
   }
 });
 
-// --- Añadir nueva tarjeta ---
 const addButton = document.querySelector('.profile__add');
 const popupAdd = document.querySelector('.popup__add');
 const closeAddButton = popupAdd.querySelector('.popup__close-add');
@@ -113,18 +105,15 @@ const nameInput = addForm.querySelector('.popup__form-input-name');
 const linkInput = addForm.querySelector('.popup__form-input-link');
 const elementsSection = document.querySelector('.elements');
 
-// Abrir popup añadir tarjeta
 addButton.addEventListener('click', () => {
   popupAdd.classList.add('show');
   addForm.reset();
 });
 
-// Cerrar popup añadir tarjeta
 closeAddButton.addEventListener('click', () => {
   popupAdd.classList.remove('show');
 });
 
-// Añadir nueva tarjeta al DOM
 addForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const name = nameInput.value.trim();
@@ -137,12 +126,10 @@ addForm.addEventListener('submit', (e) => {
   }
 });
 
-// Popup de imagen
 const popupImage = document.querySelector('.popup__image');
 const popupImageImg = document.querySelector('.popup__image-img');
 const popupImageClose = document.querySelector('.popup__close-image');
 
-// Abrir imagen ampliada
 document.addEventListener('click', function(e) {
   if (e.target.classList.contains('elements__card-image')) {
     popupImageImg.src = e.target.src;
@@ -151,13 +138,11 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// Cerrar popup al hacer click en el botón de cerrar
 popupImageClose.addEventListener('click', function() {
   popupImage.classList.remove('show');
   popupImageImg.src = '';
 });
 
-// Cerrar popup al hacer click fuera de la imagen
 popupImage.addEventListener('click', function(e) {
   if (e.target === popupImage) {
     popupImage.classList.remove('show');
@@ -165,7 +150,6 @@ popupImage.addEventListener('click', function(e) {
   }
 });
 
-// Cerrar popup con Escape
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape' && popupImage.classList.contains('show')) {
     popupImage.classList.remove('show');
