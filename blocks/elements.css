@@ -3,22 +3,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 1a95834 (June 12)
-=======
->>>>>>> parent of 1a95834 (June 12)
-=======
->>>>>>> parent of 1a95834 (June 12)
-=======
->>>>>>> parent of 1a95834 (June 12)
+
   width: 880px;
->>>>>>> parent of 1a95834 (June 12)
   column-gap: 17px;
   row-gap: 20px;
   margin: auto;
