@@ -83,8 +83,10 @@
   .elements {
     grid-template-columns: repeat(2, 1fr);
     max-width: 100vw;
-    
+    margin-left: auto;
+    margin-right: auto;
     justify-items: center;
+    
   }
   .elements__card {
     width: 100%;
