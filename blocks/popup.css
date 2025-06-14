@@ -28,6 +28,19 @@
   display: flex;
 }
 
+/* Ensure the image popup container is positioned relatively */
+.popup_type_image {
+  position: relative;
+}
+
+/* Style the close button for image popups */
+.popup_type_image .popup__close {
+  position: absolute;
+  top: -40px;    /* Higher above the image */
+  right: 0;      /* Just to the right edge of the image */
+  z-index: 2;
+}
+
 /* For all popups */
 .popup__form-container,
 .popup__image-container {
@@ -104,11 +117,24 @@
 
 /* Close button for all popups and image popup */
 .popup__close,
-.popup__close-add,
+.popup__close-add {
+  position: fixed;
+  top: 150px;
+  right: 30%;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-image: url(../images/close.png);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
 .popup__close-image {
   position: fixed;
-  top: 200px;
-  right: 30%;
+  top: 50px;
+  right: 200px;
   width: 40px;
   height: 40px;
   background-size: cover;
@@ -120,6 +146,16 @@
 }
 .popup__close:hover {
   opacity: 0.6;
+}
+@media screen and (max-width: 768px) {
+  .popup__close,
+  .popup__close-add,
+  .popup__close-image {
+    top: 100px;
+    right: 60px;
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -157,14 +193,4 @@
   }
 }
 
-@media screen and (max-width: 600px) {
-  .popup__close,
-  .popup__close-add,
-  .popup__close-image {
-    top: -30px;
-    right: -30px;
-    width: 30px;
-    height: 30px;
-  }
-}
 
