@@ -27,24 +27,33 @@
 .popup__image.show {
   display: flex;
 }
+
+/* For all popups */
+.popup__form-container,
 .popup__image-container {
-  display: inline-block;
   position: relative;
 }
+
+.popup__form-container {
+  margin-top: 40px;
+  margin-right: 40px;
+  width: 430px;
+  height: 330px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 36px;
+}
+
+.popup__form-container {
+  position: relative;
+}
+
 .popup__image-img {
   max-height: 540px;
   width: auto;
   max-width: 90vw;
   border-radius: 10px;
   box-shadow: 0 0 20px #0008;
-}
-
-.popup__form-container {
-  width: 430px;
-  height: 330px;
-  background-color: white;
-  border-radius: 10px;
-  padding: 36px;
 }
 
 .popup__form {
@@ -92,26 +101,14 @@
 .popup__send:hover {
   opacity: 0.8;
 }
-.popup__close {
-  width: 40px;
-  height: 40px;
-  background-size: cover;
-  background-image: url(../images/close.png);
-  background-color: transparent;
-  border: none;
-  position: relative;
-  left: 550px;
-  top: -225px;
-  cursor: pointer;
-}
-.popup__close:hover {
-  opacity: 0.6;
-}
 
+/* Close button for all popups and image popup */
+.popup__close,
+.popup__close-add,
 .popup__close-image {
-  position: absolute;
-  top: 0;
-  right: -40px;
+  position: fixed;
+  top: 200px;
+  right: 30%;
   width: 40px;
   height: 40px;
   background-size: cover;
@@ -120,6 +117,9 @@
   border: none;
   cursor: pointer;
   z-index: 2;
+}
+.popup__close:hover {
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 480px) {
@@ -138,7 +138,7 @@
 
   .popup__close {
     position: fixed;
-    top: 140px;
+    top: 300px;
     left: 250px;
     width: 26px;
     height: 26px;
@@ -158,13 +158,13 @@
 }
 
 @media screen and (max-width: 600px) {
-  .popup__image-img {
-    max-height: 300px;
-    max-width: 98vw;
-  }
+  .popup__close,
+  .popup__close-add,
   .popup__close-image {
+    top: -30px;
     right: -30px;
     width: 30px;
     height: 30px;
   }
 }
+
