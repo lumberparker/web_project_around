@@ -18,12 +18,26 @@
   letter-spacing: 0%;
  
 }
+.elements__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
+  gap: 16px;
+  min-height: 100px;
+  width: 100%;
+  justify-items: stretch; 
+  padding: 0; 
+  margin: 0;  
+}
+
 .elements__card {
-  display: flex;
-  gap: 0px;
-  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   width: 282px;
-  height: 361px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
   position: relative;
 }
 .elements__card-delete {
