@@ -176,6 +176,7 @@
   .popup__close-image {
     grid-column: 8 / 9;
 }
+}
 @media screen and (max-width: 768px) {
   .popup__image-img {
     grid-column: 1 / 8;
