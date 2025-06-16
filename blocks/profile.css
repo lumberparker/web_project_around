@@ -34,7 +34,6 @@
   width: 150px;
   height: 50px;
   background-color: transparent;
-  border-color: white;
   border: 2px solid;
   border-color: white;
   color: white;
@@ -53,8 +52,6 @@
   background-color: transparent;
   border-color: white;
   border: 1px solid;
-  margin-left: 18px;
-  border-color: white;
   color: white;
   background-image: url(../images/edit.png);
   background-repeat: no-repeat;
