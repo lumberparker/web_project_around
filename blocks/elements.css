@@ -58,6 +58,7 @@
   height: 282px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  cursor: pointer;
 }
 .elements__card-info {
   height: 79;
