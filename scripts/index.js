@@ -74,8 +74,7 @@ const profileHeading = document.querySelector(".profile__info-heading");
 const saveButton = document.querySelector(".popup__send");
 
 editButton.addEventListener("click", function () {
-  nameField.value = profileName.textContent;
-  aboutField.value = profileHeading.textContent;
+  
   popup.classList.add("show");
 });
 
