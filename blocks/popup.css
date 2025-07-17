@@ -248,3 +248,24 @@
     align-self: center;
   }
 }
+
+.popup__error {
+  color: #ff0000;
+  font-size: 12px;
+  font-family: "inter", Arial, Helvetica, sans-serif;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  display: block;
+  min-height: 16px;
+}
+
+.popup__send:disabled {
+  background-color: #c4c4c4;
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.popup__form-input_type_error {
+  border-bottom: 2px solid #ff0000;
+}

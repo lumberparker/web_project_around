@@ -74,15 +74,15 @@ const profileHeading = document.querySelector(".profile__info-heading");
 const saveButton = document.querySelector(".popup__send");
 
 editButton.addEventListener("click", function () {
-  
   popup.classList.add("show");
+  form.reset();
 });
 
 closeButton.addEventListener("click", function () {
   popup.classList.remove("show");
 });
 
-saveButton.addEventListener("click", function (event) {
+form.addEventListener("submit", function (event) {
   event.preventDefault();
   const newName = nameField.value.trim();
   const newAbout = aboutField.value.trim();
@@ -99,21 +99,21 @@ saveButton.addEventListener("click", function (event) {
 const addButton = document.querySelector('.profile__add');
 const popupAdd = document.querySelector('.popup__add');
 const closeAddButton = popupAdd.querySelector('.popup__close-add');
-const addForm = popupAdd.querySelector('.popup__form-add');
-const nameInput = addForm.querySelector('.popup__form-input-name');
-const linkInput = addForm.querySelector('.popup__form-input-link');
+const addCardForm = popupAdd.querySelector('.popup__form-add');
+const nameInput = addCardForm.querySelector('.popup__form-input-name');
+const linkInput = addCardForm.querySelector('.popup__form-input-link');
 const elementsSection = document.querySelector('.elements');
 
 addButton.addEventListener('click', () => {
   popupAdd.classList.add('show');
-  addForm.reset();
+  addCardForm.reset();
 });
 
 closeAddButton.addEventListener('click', () => {
   popupAdd.classList.remove('show');
 });
 
-addForm.addEventListener('submit', (e) => {
+addCardForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const name = nameInput.value.trim();
   const link = linkInput.value.trim();
@@ -121,7 +121,7 @@ addForm.addEventListener('submit', (e) => {
     const newCard = createCard({ name, link });
     elementsSection.prepend(newCard);
     popupAdd.classList.remove('show');
-    addForm.reset();
+    addCardForm.reset();
   }
 });
 
@@ -154,4 +154,43 @@ document.addEventListener('keydown', function(e) {
     popupImage.classList.remove('show');
     popupImageImg.src = '';
   }
+});
+
+function closePopupOnOverlayClick(event) {
+  if (event.target.classList.contains('popup') || event.target.classList.contains('popup__add') || event.target.classList.contains('popup__image')) {
+    event.target.classList.remove('show');
+    // Limpiar imagen ampliada si es necesario
+    if (event.target.classList.contains('popup__image')) {
+      const img = event.target.querySelector('.popup__image-img');
+      if (img) img.src = '';
+    }
+  }
+}
+
+document.querySelectorAll('.popup, .popup__add, .popup__image').forEach(popupEl => {
+  popupEl.addEventListener('mousedown', closePopupOnOverlayClick);
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.popup, .popup__add, .popup__image').forEach(popupEl => {
+      if (popupEl.classList.contains('show')) {
+        popupEl.classList.remove('show');
+        // Limpiar imagen ampliada si es necesario
+        if (popupEl.classList.contains('popup__image')) {
+          const img = popupEl.querySelector('.popup__image-img');
+          if (img) img.src = '';
+        }
+      }
+    });
+  }
+});
+
+window.enableValidation({
+  formSelector: ".popup__form",
+  inputSelector: ".popup__form-input",
+  submitButtonSelector: ".popup__send",
+  inactiveButtonClass: "popup__send:disabled",
+  inputErrorClass: "popup__form-input_type_error",
+  errorClass: "popup__error_visible"
 });
