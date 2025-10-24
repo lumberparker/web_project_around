@@ -282,16 +282,26 @@
   color: #ff0000;
   font-size: 12px;
   font-family: "inter", Arial, Helvetica, sans-serif;
-  margin-top: -10px;
+  margin-top: -20px;
   margin-bottom: 10px;
   display: block;
-  min-height: 40px;
+  min-height: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
 }
-.popup__send {
 
+.popup__error_visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup__send {
   margin-bottom: 10px;
 }
-.popup__send:disabled {
+
+.popup__send:disabled,
+.popup__send_disabled {
   background-color: #c4c4c4;
   color: #fff;
   cursor: not-allowed;

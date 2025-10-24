@@ -1,0 +1,121 @@
+3era semana Sprint 9
+
+17 de julio de 2025 - Notas de trabajo Sprint 9
+
+1. Validación de formularios (popups Editar Perfil y Añadir Tarjeta):
+   - Se implementó validación de campos obligatorios y límites de caracteres.
+   - Se muestran mensajes de error debajo de los campos cuando hay errores.
+   - El botón "Guardar" se desactiva si hay errores o campos vacíos.
+   - Se utiliza el color rojo para la línea inferior de los campos con error.
+   - Los mensajes de error usan los textos por defecto del navegador.
+
+2. Refactorización de la validación:
+   - Todo el código de validación se movió a un archivo separado `validate.js`.
+   - Se creó la función `enableValidation(config)` que recibe un objeto de configuración con selectores y clases.
+   - La validación se activa en todos los formularios llamando a `enableValidation` desde `index.js`.
+
+3. Accesibilidad y experiencia de usuario en popups:
+   - Ahora los popups se pueden cerrar haciendo clic fuera de la ventana emergente (superposición).
+   - También se pueden cerrar pulsando la tecla Esc.
+
+4. Limpieza de código:
+   - Se eliminó el código de validación antiguo de `index.js` para evitar duplicidad.
+   - Se conectó correctamente el nuevo archivo `validate.js` en el HTML.
+
+Explicación de lo realizado:
+
+1. Validación de formularios:
+   - Se agregaron atributos HTML directamente en los campos de los formularios, por ejemplo:
+     <input type="text" name="name" required minlength="2" maxlength="40" ... />
+     <input type="url" name="link" required ... />
+     Esto se hizo editando el archivo `index.html` y añadiendo los atributos en las etiquetas `<input>` correspondientes a cada campo.
+   - Esto asegura que el navegador valide automáticamente los campos según el tipo, longitud y obligatoriedad.
+   - Se crearon mensajes de error que aparecen automáticamente debajo de los campos cuando el usuario deja un campo vacío, ingresa un texto demasiado corto/largo o una URL inválida.
+     Ejemplo en el HTML:
+     <span class="popup__error" id="name-error"></span>
+     Esto se añadió justo después de cada campo `<input>` en el HTML.
+   - El botón "Guardar" permanece desactivado hasta que todos los campos sean válidos, evitando envíos incorrectos. Esto se controla con el atributo `disabled` en el HTML y la lógica JS:
+     <button class="popup__send" type="submit" disabled>Guardar</button>
+     Además, la función de validación en JS activa o desactiva el botón según el estado de los campos.
+   - Cuando hay un error, la línea inferior del campo se pone roja gracias a la clase CSS:
+     .popup__form-input_type_error { border-bottom: 2px solid #ff0000; }
+     Esta clase se aplica desde la función de validación en JS cuando el campo es inválido.
+
+2. Refactorización y organización:
+   - Todo el código de validación se movió a un archivo aparte (`validate.js`) para mantener el proyecto ordenado y facilitar el mantenimiento.
+   - Se implementó la función `enableValidation(config)`, que permite activar la validación en cualquier formulario del proyecto usando un objeto de configuración con selectores y clases. Ejemplo de uso:
+     enableValidation({
+       formSelector: ".popup__form",
+       inputSelector: ".popup__form-input",
+       submitButtonSelector: ".popup__send",
+       inactiveButtonClass: "popup__send:disabled",
+       inputErrorClass: "popup__form-input_type_error",
+       errorClass: "popup__error_visible"
+     });
+   - Esto hace que la validación sea reutilizable y fácil de adaptar a nuevos formularios.
+
+3. Accesibilidad y experiencia de usuario:
+   - Se mejoró la experiencia permitiendo cerrar los popups haciendo clic fuera de la ventana emergente o presionando la tecla Esc, agregando listeners en JS:
+     popupEl.addEventListener('mousedown', closePopupOnOverlayClick);
+     document.addEventListener('keydown', ...);
+
+4. Limpieza de código:
+   - Se eliminó el código viejo de validación de `index.js` para evitar duplicidad y errores.
+   - Se conectó correctamente el nuevo archivo de validación en el HTML:
+     <script src="./scripts/validate.js"></script>
+     <script src="./scripts/index.js"></script>
+
+Nota: El <span> que muestra el mensaje de error debe tener como id el nombre del input seguido de -error. Por ejemplo, para el input name="name" el span debe ser:
+<span class="popup__error" id="name-error"></span>
+Esto permite que la función de validación asocie correctamente cada mensaje de error con su campo correspondiente.
+
+En resumen, se mejoró la validación, la experiencia de usuario y la organización del código, facilitando el mantenimiento y la escalabilidad del proyecto.
+
+En un formulario todos los inputs tienen ciertas propiedades como type= "text" o number o email, minlength, maxlength, etc
+- que van a servir para valir los campos del formulario.
+
+Se previene el comportamiento pof default: evt.preventDefault(); - para que no se recarge la página al enviar
+
+
+Para checar en la consola si un campo es válido, puedes seleccionar el input con document.querySelector y luego usar la propiedad .validity.valid o el método .checkValidity().
+
+Por ejemplo, para el campo de nombre:
+document.querySelector('input[name="name"]').validity.valid
+o
+document.querySelector('input[name="name"]').checkValidity()
+
+Ambos te devolverán true si el campo es válido y false si no lo es.
+
+
+JS validation.js > ® namelnput.addEventListener("input") callback
+const form = document. querySelector ("#contactForm");
+const nameInput = document. querySelector ("#name");
+const emailInput = document. querySelector ("#email");
+const nameInputError = document. querySelector ("#name-error");
+nameInput addEventListener ("input", function () {
+• nameInputError.textContent = nameInput.validationMessage;
+}) ;
+emailInput.addEventListener("input", function () t});
+form. addEventListener("submit", function (e) i evt. preventDefault();
+}) ;
+
+Cada formulario existe por si solo, pero hay que validarlos todos a la vez
+
+Algoritmo
+
+N cantidad de procesos
+Lógica que funcione para todos los procesos
+Mi código siempre de ser idempotente - esto es, por un formulario el proceso debe ocupar x pasos 
+
+Pero por 10 formularios debe ocupar los mismos x pasos.
+
+function enableValidation() {
+    const formList = document.querySelector("form");
+    const inputList = form.querySelectorAll("input");
+};
+    formList.forEach(function (form){
+        console.log("formulario con el id: " form.id, " en el indice de la lista: " )
+        evt.preventDefault();
+    });
+
+
